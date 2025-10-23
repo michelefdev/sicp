@@ -5,7 +5,7 @@
 ;I also expect the helper function to be "abstractable" from the cardinality of the tuplet
 ;but that's the next step 
 
-
+;###########################################GREATEST SINGLET###########################################
 ;HELPER FUNCTION
 (define (max-of-two x y)
   (if (> x y) x y)
@@ -19,6 +19,7 @@
     (else (max-of-two (greatest-of-many (cdr numbers))
                       (car numbers)))))
 
+;###########################################GREATEST PAIR###########################################
 
 ;HELPER FUNCTIONS
 (define (update-max-pair pair candidate)
@@ -29,12 +30,19 @@
   )
 )
 
+(define (order-pair pair)
+  (if (> (car pair) (cadr pair))
+      (list (cadr pair) (car pair)) 
+      (list (car pair) (cadr pair))
+  )
+)
+
 ;MAIN FUNCTION
 (define (greatest-pair numbers)
   (cond 
     ((null? numbers) '())
     ((null? (cdr numbers)) '())
     ((null? (cddr numbers)) numbers)
-    ((update-max-pair (greatest-pair (cdr numbers)) (car numbers)))
+    (else (order-pair(update-max-pair (order-pair (greatest-pair (cdr numbers))) (car numbers))))
   )
 )
