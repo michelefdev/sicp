@@ -13,8 +13,7 @@
 ```
 What behavior will Ben observe with an interpreter that
 uses applicative-order evaluation? What behavior will he
-observe with an interpreter that uses normal-order evalu-
-ation?
+observe with an interpreter that uses normal-order evaluation?
 ---
 
 We follow the **apply–eval loop** to evaluate this combination:
@@ -31,13 +30,12 @@ But this doesn’t matter here, since the `(p)` operand is being evaluated **as 
 ---
 
 In a **normal order** evaluation, operands are evaluated **only when needed**.  
-So, given the definition of the `test` function, the interpreter would actually reach the state where it evaluates the expression:
+So, given the definition of the `test` function, the interpreter expands `(test 0 (p))` as
 
 ```scheme
 (if (= 0 0) 0 (p))
 ```
-
-However, `p` is **never really evaluated** because of the `if` special form’s evaluation rule, which states that the third argument of the if form is evaluated only if the predicate is false, which would not be the case in this example.
+because, again, it expands the procedures before evaluating the operands. However, `p` is **never really evaluated** because of the `if` special form’s evaluation rule, which states that the third argument of the if form is evaluated only if the predicate is false, which would not be the case in this example.
 
 ---
 
