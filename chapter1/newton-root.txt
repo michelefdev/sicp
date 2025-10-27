@@ -1,0 +1,33 @@
+Devo trovare la radice quadrata di 3.
+Suppongo che sia 1,   		verifico e noto che non lo e', allora provo con la media tra (3/1) e 	 1, 		quindi
+Suppongo che sia 2,   		verifico e noto che non lo e', allora provo con la media tra (3/2) e 	 2, 		quindi
+suppongo che sia 1.75 		verifico e noto che non lo e', allora provo con la media tra (3/1.75)  e 1.75		quindi
+suppongo che sia 1.714		verifico e noto che non lo e', allora provo con la media tra (3/1.714) e 1.714		quindi
+suppongo che sia 1.732		verifico e noto che non lo e', allora provo con la media tra (3/1.732) e 1.732		quindi
+...
+[NOTA CHE IL LOOP E' INFINITO PER QUALSIASI NUMERO NON SIA UN QUADRATO PERFETTO, QUINDI PRIMA SCRIVIAMO UNA PROCEDURA FUNZIONANTE PER I CASI SPECIALI,
+POI AGGIUNGIAMO UN "GOOD-ENOUGH" PER COPRIRE ANCHE I QUADRATI NON PERFETTI]
+
+
+(define (good-enough? guess square)
+  (if (< (abs (- (* guess guess) square)) 0.01)
+    true
+    false
+  )
+)
+
+
+(define (avg x y)
+  (/ (+ x y)
+      2
+  )
+)
+
+(define (try guess square)
+  (if (good-enough? guess square)
+      guess
+      (try (avg (/ square guess) guess)
+           square)))
+
+
+
