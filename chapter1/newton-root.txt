@@ -8,6 +8,27 @@ suppongo che sia 1.732		verifico e noto che non lo e', allora provo con la media
 [NOTA CHE IL LOOP E' INFINITO PER QUALSIASI NUMERO NON SIA UN QUADRATO PERFETTO, QUINDI PRIMA SCRIVIAMO UNA PROCEDURA FUNZIONANTE PER I CASI SPECIALI,
 POI AGGIUNGIAMO UN "GOOD-ENOUGH" PER COPRIRE ANCHE I QUADRATI NON PERFETTI]
 
+(define (sqrt x)
+  (sqrt-iter (/ x 2) x)
+)
+
+
+(define (sqrt-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (sqrt-iter (improve guess x) x)
+  )
+)
+
+(define (improve guess x)
+  (avg (/ x guess) guess)
+)
+
+(define (avg a b)
+  (/ (+ a b)
+      2
+  )
+)
 
 (define (good-enough? guess square)
   (if (< (abs (- (* guess guess) square)) 0.01)
@@ -17,17 +38,10 @@ POI AGGIUNGIAMO UN "GOOD-ENOUGH" PER COPRIRE ANCHE I QUADRATI NON PERFETTI]
 )
 
 
-(define (avg x y)
-  (/ (+ x y)
-      2
-  )
-)
 
-(define (try guess square)
-  (if (good-enough? guess square)
-      guess
-      (try (avg (/ square guess) guess)
-           square)))
+
+
+
 
 
 
