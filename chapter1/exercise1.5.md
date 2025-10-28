@@ -1,4 +1,4 @@
-# Ben Bitdiddle’s Evaluation Test
+# Exercise: Ben Bitdiddle’s Evaluation Test
 
 ## Definitions
 ```scheme
