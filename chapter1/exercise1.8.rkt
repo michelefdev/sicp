@@ -38,3 +38,11 @@
 (define (cube-root x)
   (try 1 x)
 )
+
+; Notice that this set of procedures is fine as long as we are dealing with such a small program.
+; But imagine having to build a library of numerical methods that includes not only square roots and 
+; cube roots but also other numerical procedures.
+; This could mean that different procedures might require different ways to improve the guess, but then
+; we would have to name them differently, like "improve-1" or "improve-square", "improve-cube", which
+; is not the best approach.
+; We could nest definitions and build a "block structure", for example:
