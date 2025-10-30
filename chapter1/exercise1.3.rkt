@@ -1,20 +1,7 @@
-#lang scheme
-;#TODO: Implement a generalized function that can find the n greatest numbers in a list.
-;###########################################GREATEST SINGLET###########################################
-; ;HELPER FUNCTION
-; (define (max-of-two x y)
-;   (if (> x y) x y)
-; )
+; Deﬁne a procedure that takes three numbers
+; as arguments and returns the sum of the squares of the two
+; larger numbers.
 
-; ;MAIN FUNCTION
-; (define (greatest-of-many numbers)
-;   (cond
-;     ((null? numbers) '())
-;     ((null? (cdr numbers)) (car numbers))
-;     (else (max-of-two (greatest-of-many (cdr numbers))
-;                       (car numbers)))))
-
-; ;###########################################GREATEST PAIR###########################################
 
 ;this helper function updates the pair if the candidate is greater than either of the two values in the pair
 (define (update-max-pair pair candidate)
