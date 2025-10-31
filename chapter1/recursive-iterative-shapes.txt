@@ -1,0 +1,43 @@
+(define 
+    (factorial-r n)
+    (if (= n 1)
+        1
+        (* n (recursive-factorial (- n 1)))
+    )
+)
+
+(define (factorial-i n)
+    (define (iterative-factorial total counter max)
+        (if (= counter max)
+            product
+            (iterative-factorial (* total counter)
+                                 (+ 1 counter)
+                                  max
+            )
+        
+        )
+    )
+    (iterative-factorial 1 1 n)
+)
+
+
+RECURSIVE APPROACH: I don't know what the factorial of n is, but I know that it's going to be n times the factorial of (n-1).
+ITERATIVE APPROACH: I don't know what the factorial of n is, but if you give me a running total and an 
+
+(define (my-product a b)
+    (define (product-iter a b total)
+        (cond
+            ( (or (= a 0) (= b 0)) 0)
+            ((= b 1) (+ total a))
+            (else (product-iter a 
+                            (- b 1) 
+                            (+ total a)))
+        )
+    )
+    (product-iter a b 0)
+)
+
+
+
+
+
