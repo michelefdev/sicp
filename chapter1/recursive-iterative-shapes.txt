@@ -1,29 +1,7 @@
-(define 
-    (factorial-r n)
-    (if (= n 1)
-        1
-        (* n (recursive-factorial (- n 1)))
-    )
-)
+#Jumping stright into factorial is tricky for me, so let's try something simpler first.
+#The idea is to get used to handle counters and accumulators in recursive functions.
 
-(define (factorial-i n)
-    (define (iterative-factorial total counter max)
-        (if (= counter max)
-            product
-            (iterative-factorial (* total counter)
-                                 (+ 1 counter)
-                                  max
-            )
-        
-        )
-    )
-    (iterative-factorial 1 1 n)
-)
-
-
-RECURSIVE APPROACH: I don't know what the factorial of n is, but I know that it's going to be n times the factorial of (n-1).
-ITERATIVE APPROACH: I don't know what the factorial of n is, but if you give me a running total and an 
-
+#Redefine a function my-product that takes two positive integers a and b and returns their product a * b.
 (define (my-product a b)
     (define (product-iter a b total)
         (cond
@@ -36,6 +14,8 @@ ITERATIVE APPROACH: I don't know what the factorial of n is, but if you give me 
     )
     (product-iter a b 0)
 )
+
+#Define a function that takes a positive integer n and returns the sum of the first n odd integers.
 
 
 
