@@ -16,17 +16,28 @@
 )
 
 ; Define a function that takes a positive integer n and returns the sum of the first n integers.
-
 (define (sum-of-consecutives n)
-    (define (sum-iter n 0)
-        (cond ()
+    (define (sum-iter n counter)
+        (if (= n 0)
+            counter
+            (sum-iter (- n 1)
+                      (+ n counter)
+
+            )
         )    
     )
     (sum-iter n 0)
-
 )
 
-Define a function that takes the product of all the pairs of the first 10 numbers and sum it (or something like that)
-
-
-
+; Finally try with the factorial
+(define (factorial n)
+    (define (factorial-iter number total)
+        (if (or (= number 1) (= number 0))
+            total
+            (factorial-iter (- number 1)
+                            (* total number)
+            )
+        )
+    )
+    (factorial iter n 1)
+)
