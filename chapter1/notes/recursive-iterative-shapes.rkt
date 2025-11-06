@@ -41,3 +41,9 @@
     )
     (factorial iter n 1)
 )
+; The same reasoning applies for addition, that can be reimplemented as a recursive or as an iterative
+; process using only the decrement and increment procedure, as required in exercises 1.9
+
+
+
+
