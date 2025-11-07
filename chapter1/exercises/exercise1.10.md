@@ -50,16 +50,15 @@ The following procedure computes a mathematical function called Ackermann’s fu
 (A 2 4)
 
 (A 1 (A 2 3))
-(A 1 (A 1 (A 1 3)))
-(A 1 (A 1 (A 0 (A 1 2))))
-(A 1 (A 1 (A 0 (A 0 (A 1 1)))))
-(A 1 (A 1 (A 0 (A 0 2))))
-(A 1 (A 1 (A 0 4)))
-(A 1 (A 1 8))
-(A 1 256)
+(A 1 (A 1 (A 2 2)))
+(A 1 (A 1 (A 1 (A 2 1))))
+(A 1 (A 1 (A 1 2)))
+(A 1 (A 1 4))
+(A 1 16)
 
-2^256
-1.1579208924 * 10^77
+2^16
+65536
+
 ```
 ### (A 3 3)
 ```scheme
@@ -82,3 +81,17 @@ The following procedure computes a mathematical function called Ackermann’s fu
 65536
 ```
 
+## Consider the following procedures, where A is the procedure deﬁned above:
+```scheme
+(define (f n) (A 0 n))
+(define (g n) (A 1 n))
+(define (h n) (A 2 n))
+(define (k n) (* 5 n n))
+```
+
+## Give concise mathematical deﬁnitions for the functions computed by the procedures f, g, and h for positive integer values of n
+
+f(n) = 2n
+g(n) = 2^n
+h(n) = 2^(2^(2^2))... "Tower of twos with n twos"
+k(n) = 5(n^2)
