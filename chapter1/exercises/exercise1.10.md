@@ -18,6 +18,7 @@ The following procedure computes a mathematical function called Ackermann’s fu
 (A 2 4)
 (A 3 3)
 
+### (A 1 10)
 ```scheme
 (A 1 10)
 
@@ -39,5 +40,45 @@ The following procedure computes a mathematical function called Ackermann’s fu
 (A 0 (A 0 (A 0 128)))
 (A 0 (A 0 256))
 (A 0 512)
+
+2^10
 1024
 ```
+### (A 2 4)
+
+```scheme
+(A 2 4)
+
+(A 1 (A 2 3))
+(A 1 (A 1 (A 1 3)))
+(A 1 (A 1 (A 0 (A 1 2))))
+(A 1 (A 1 (A 0 (A 0 (A 1 1)))))
+(A 1 (A 1 (A 0 (A 0 2))))
+(A 1 (A 1 (A 0 4)))
+(A 1 (A 1 8))
+(A 1 256)
+
+2^256
+1.1579208924 * 10^77
+```
+### (A 3 3)
+```scheme
+(A 3 3)
+
+(A 2 (A 3 2))
+(A 2 (A 2 (A 3 1)))
+(A 2 (A 2 2))
+(A 2 (A 1 (A 2 1)))
+(A 2 (A 1 2))
+(A 2 4)
+(A 1 (A 2 3))
+(A 1 (A 1 (A 2 2)))
+(A 1 (A 1 (A 1 (A 2 1))))
+(A 1 (A 1 (A 1 2)))
+(A 1 (A 1 4))
+(A 1 16)
+
+2^16
+65536
+```
+
