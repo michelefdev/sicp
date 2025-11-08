@@ -48,4 +48,17 @@ P(n)        =>  P(n+1)
 (+ 1 (+ (cc 1 5) (cc 1 0)))
 (+ 1 (+ 1 1))
 (+ 1 2)
-3
+3 - [x]
+
+## Less Naive approach: try to pass a list of coins (illegal but simpler)
+```scheme
+(define (cc coins amount)
+    (cond ((or (null? coins)(< amount 0)) 0)
+          ((= amount 0) 1)
+          (else (+ (cc (cdr coins) amount)
+                   (cc coins (- amount (car coins)))
+                )
+          )
+    )
+)
+```
