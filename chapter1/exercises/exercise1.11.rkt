@@ -19,8 +19,11 @@
     (define (f first second third counter)
         (if (= counter 0)
             third
-            (f third (* 2 second) (* 3 first) (- counter 1))
-        ) 
-    )    
-    (f 0 1 2 counter)
+            (f second third (+ third (* 2 second) (* 3 first)) (- counter 1))
+        )
+    )
+    (cond 
+        ((< n 3) n)
+        (else (f 0 1 2 (- n 2)))
+    )
 )
