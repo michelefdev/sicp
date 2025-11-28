@@ -30,6 +30,6 @@ Each chapter in this repo contains notes, exercises, and reflections on key conc
 
 | Chapter | Focus | Status | Highlights |
 |---------|-------|--------|------------|
-| 1 | Building Abstractions with Procedures | ✅ Completed | Implemented recursive and higher-order procedures, practiced substitution model, built small numerical and symbolic programs in Scheme |
-| 2 | Building Abstractions with Data | ✅ Completed | Explored pairs, lists, and symbolic data; practiced constructing hierarchical abstractions and manipulating data structures |
-| 3 | Modularity, Objects, and State | 🚧 In Progress | Learned about assignment, environments, streams, and modular design patterns in Scheme
+| 1 | Building Abstractions with Procedures | 🚧 In Progress| Implemented recursive and higher-order procedures, practiced substitution model, built small numerical and symbolic programs in Scheme |
+| 2 | Building Abstractions with Data | 📌 To Do | Explored pairs, lists, and symbolic data; practiced constructing hierarchical abstractions and manipulating data structures |
+| 3 | Modularity, Objects, and State | 📌 To Do | Learned about assignment, environments, streams, and modular design patterns in Scheme
