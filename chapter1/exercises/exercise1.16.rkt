@@ -13,3 +13,7 @@
     )
     (fast-exp-iter 1 b n)
 )
+; A general approach to build iterative processes is to have invariant, meaning a state variable that
+; stays the same across every step of the algorithm, in this case the invariant is:
+
+; k = a*b^n
