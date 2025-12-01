@@ -4,13 +4,3 @@
           (else (+ (fib-rec (- n 1)) (fib-rec (-n 2))))
     )
 )
-
-(define (fib-iter n)
-    (define (fib first second counter)
-        (if (= counter 0)
-            second
-            (fib second (+ first second) (- counter 1))    
-        )
-    )
-    (fib 0 1 counter)
-)
